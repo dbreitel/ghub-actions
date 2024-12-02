@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: webgoat-jar
-          path: target/*.jar  # This assumes the JAR is in the 'target' directory
+          path: docker/target/*.jar  # This assumes the JAR is in the 'target' directory
