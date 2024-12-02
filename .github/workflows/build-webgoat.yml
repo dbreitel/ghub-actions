@@ -27,12 +27,10 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean package -B -DskipTests
-      - name: List all files and directories
-        run: ls -lAR  # This lists files and directories recursively
-
+      
 
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v3
         with:
           name: webgoat-jar
-          path: docker/target/*.jar  # This assumes the JAR is in the 'target' directory
+          path: webgoat-server/target/*.jar  # This assumes the JAR is in the 'target' directory
