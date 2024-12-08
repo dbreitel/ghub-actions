@@ -39,13 +39,13 @@ jobs:
       - name: Run Trivy FS Scan and Generate Report
         run: trivy fs --exit-code 0 --severity HIGH,CRITICAL --ignore-unfixed --format json -o trivy-report.json .
       - name: copy results to table too 
-        run: trivy convert --format table trivy-report.json > results_table.txt
+        run: trivy convert --format table trivy-report.json > trivy-report.txt
 
       - name: Upload Trivy Report
         uses: actions/upload-artifact@v3
         with:
-          name: trivy-report
-          path: trivy-report.json
+          name: trivy-report.zip
+          path: trivy-report.*
 
       
 
