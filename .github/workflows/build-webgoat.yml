@@ -42,7 +42,7 @@ jobs:
         run: trivy convert --format table trivy-report.json > trivy-report.txt
 
       - name: Upload Trivy Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: trivy-report.zip
           path: trivy-report.*
@@ -50,7 +50,7 @@ jobs:
       
 
       - name: Upload JAR Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: webgoat-jar
           path: webgoat-server/target/webgoat-server-v8.1.0.jar  # This assumes the JAR is in the 'target' directory
