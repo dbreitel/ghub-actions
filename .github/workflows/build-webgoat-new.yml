@@ -26,7 +26,9 @@ jobs:
           java-version: '17'  # Replace with '20' if you want Java 20
           distribution: 'temurin'  # 'adopt' can also be used
           cache: maven
-
+      # check java version
+      - name: Check Java version
+        run: java -version
       # Step 3: Build the project with Maven
       - name: Build with Maven
         run: mvn clean package -B -DskipTests
